@@ -12,16 +12,16 @@
   max-width: 90vw;
   height: 100vh;
   margin: auto;
-  padding: 2rem;
   background: #e9ecf8;
 }
 
 main {
   display: grid;
-  grid-template-columns: 10% 60% auto;
+  grid-template-columns: 10% 60% 1fr;
   width: 100%;
   height: 100%;
   gap: 1rem;
+  padding: 2rem;
 }
 
 .input {
@@ -54,27 +54,26 @@ main {
   gap: 1rem;
 }
 
-.buttons > button:first-child {
+.btn-primary {
   background: #0a3871;
   color: white;
 }
 
-.buttons > button:nth-child(2) {
+.btn-secondary {
   background: #d8dfe8;
   color: #0a3871;
 }
 
-.buttons > button {
+.btn {
   padding: 1rem;
   border: none;
-  flex: 1;
+  width: 100%;
   border-radius: 1rem;
   cursor: pointer;
   font-size: 1rem;
 }
 
 aside {
-  height: 100%;
   border-radius: 2rem;
 }
 
@@ -83,37 +82,52 @@ aside {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   gap: 1rem;
 }
 
-/* Movil */
-@media screen and (max-width: 768px) {
+.text-output {
+  font-weight: 100;
 }
 
-/* Tablet */
-@media screen and (min-width: 768px) and (max-width: 1300px) {
+/* Movil */
+@media screen and (max-width: 768px) {
   .container {
-    min-width: none;
+    min-width: 300px;
     max-width: 100vw;
-    border: 1px solid red;
   }
+
   main {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding: 1rem;
   }
 
   .logo {
     margin-top: 1rem;
-    width: 150px;
+    width: 80px;
   }
 
-  .input {
-    height: 50%;
+  .input > .buttons {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .buttons > button {
     width: 100%;
-    border: 1px solid red;
+  }
+
+  .input > textarea {
+    font-size: 1rem;
+  }
+
+  .input h4 {
+    font-size: 0.8rem;
+  }
+
+  .info {
+    margin: 0 0 1rem 0;
   }
 
   .img_output {
@@ -121,6 +135,47 @@ aside {
   }
 
   .output {
-    flex: 1;
+    height: 30%;
+    font-size: 0.8rem;
   }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  .container {
+    min-width: 768px;
+    max-width: 90vw;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-top: 1rem;
+    width: 150px;
+  }
+
+  .info {
+    margin: 0 0 1rem 0;
+  }
+
+  .img_output {
+    display: none;
+  }
+
+  .output {
+    height: 30%;
+    font-size: 1.2rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.space-beetwen {
+  justify-content: space-between;
 }

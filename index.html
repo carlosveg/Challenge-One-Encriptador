@@ -15,7 +15,7 @@
       <section class="input">
         <textarea
           name="inputText"
-          id="inputText"
+          id="input-text"
           placeholder="Ingrese aquí el texto..."
         ></textarea>
         <div
@@ -28,17 +28,29 @@
           </h4>
         </div>
         <div class="buttons">
-          <button>Encriptar</button>
-          <button>Desencriptar</button>
+          <button id="btn-encrypt" class="btn btn-primary">Encriptar</button>
+          <button id="btn-decrypt" class="btn btn-secondary">
+            Desencriptar
+          </button>
         </div>
       </section>
       <aside class="output">
-        <img class="img_output" src="./images/Muñeco.png" alt="" />
-        <h2>Ningún mensaje fue encontrado</h2>
-        <h4 style="font-weight: normal">
-          Ingresa el texto que desees encriptar o desencriptar
-        </h4>
+        <h2 id="output" class="message-output hidden"></h2>
+        <div class="placeholder">
+          <img class="img_output" src="./images/Muñeco.png" alt="" />
+          <div class="message">
+            <h2 class="text-output">Ningún mensaje fue encontrado</h2>
+            <h4 style="font-weight: normal">
+              Ingresa el texto que desees encriptar o desencriptar
+            </h4>
+          </div>
+        </div>
+        <button id="btn-copy" class="btn btn-secondary btn-copy hidden">
+          Copiar
+        </button>
       </aside>
     </main>
+
+    <script src="./main.js"></script>
   </body>
 </html>
